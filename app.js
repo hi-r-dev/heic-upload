@@ -12,6 +12,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
 
   // Save the file to disk or database
   console.log(`Received file: ${file.originalname}`);
+  res.set({ "Access-Control-Allow-Origin": "*" });
   res.send("File uploaded successfully");
 });
 
